@@ -12,7 +12,7 @@ stonewall         # Wait for job to finish before starting another
 direct=1          # Bypass OS cache
 iodepth=1         # Number of IO to push to disk queue
 blocksize=4k      # Blocksize
-filename=/mnt/disk2test
+filename=fio.test
 
 [seqwrite]
 readwrite=write  # read|write|randread|randwrite|readwrite|randrw
