@@ -1,0 +1,27 @@
+[global]
+name=latency.job
+ioengine=libaio   # sync|libaio|mmap
+group_reporting=1
+thread
+size=1g           # Size of test file
+cpus_allowed=1    # Number of CPUs to use
+time_based=1
+runtime=60s       # Run test for 1 minute
+numjobs=1         # Number of jobs/threads to use. Each thread does the same thing
+stonewall         # Wait for job to finish before starting another
+direct=1          # Bypass OS cache
+iodepth=1         # Number of IO to push to disk queue
+blocksize=4k      # Blocksize
+filename=/mnt/disk2test
+
+[seqwrite]
+readwrite=write  # read|write|randread|randwrite|readwrite|randrw
+
+[seqread]
+readwrite=read  # read|write|randread|randwrite|readwrite|randrw
+
+[randread]
+readwrite=randread  # read|write|randread|randwrite|readwrite|randrw
+
+[randwrite]
+readwrite=randwrite  # read|write|randread|randwrite|readwrite|randrw
